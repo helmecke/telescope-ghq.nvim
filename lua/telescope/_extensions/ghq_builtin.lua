@@ -116,10 +116,10 @@ M.list = function(opts)
         actions.close(prompt_bufnr)
         local dir = from_entry.path(entry)
         if type == 'default' then
-          require'telescope.builtin'.git_files{cwd = dir}
-        elseif type == 'horizontal' then
           vim.cmd('cd '..dir)
           print('chdir to '..dir)
+        elseif type == 'horizontal' then
+          require'telescope.builtin'.git_files{cwd = dir}
         elseif type == 'vertical' then
           vim.cmd('lcd '..dir)
           print('lchdir to '..dir)
